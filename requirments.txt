@@ -1,8 +1,6 @@
-allure-pytest
 pytest
 virtualenv
 lxml
-argparse
 selenium
 appium-python-client
 behave
