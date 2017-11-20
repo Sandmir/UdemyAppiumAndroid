@@ -2,7 +2,7 @@ from appium import webdriver
 
 from fixture.main_features import MainFunc
 from fixture.session import SessionHelper
-import os
+
 
 class Application:
 
