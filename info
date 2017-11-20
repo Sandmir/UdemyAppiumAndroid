@@ -1,0 +1,17 @@
+// run tests
+pytest LoginPage.py -s --alluredir allure-results
+allure generate -o allure-results/h
+allure generate -o allure-results/h --clean     пезезаписать отчет в директории
+
+
+//create virtualenv
+cd /Privite/Study/Python/TestBar
+pip install virtualenv
+virtualenv --version
+virtualenv env
+source env/bin/activate
+pip install -r requirments.txt
+
+
+
+behave --tags=wip
