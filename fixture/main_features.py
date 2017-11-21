@@ -19,6 +19,7 @@ class MainFunc:
     left_action_id = "left_action"
 
 
+
     def __init__(self, app):
         self.app = app
         self.action = TouchAction(self.app.driver)
