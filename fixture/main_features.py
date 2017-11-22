@@ -71,5 +71,10 @@ class MainFunc:
         self.app.driver.find_elements_by_class_name("android.widget.LinearLayout")[0].click()
         sleep(2)
 
+    # press YES button
+    def submit(self):
+        self.app.driver.find_element_by_id("button1").click()
 
-
+    # press NO button
+    def cansel(self):
+        self.app.driver.find_element_by_id("button2").click()

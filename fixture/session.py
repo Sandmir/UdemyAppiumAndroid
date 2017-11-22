@@ -15,13 +15,14 @@ class SessionHelper:
     signin_button_id = "signin_button"
 
     username_title_id = "userTitle"
+    signout_button_xpath = "//android.widget.TextView[@text = 'Sign out']"
 
     def __init__(self, app):
         self.app = app
 
     def login_email(self, username = 'marina_sen@list.ru',psw = 'Portnov12345'):
         driver = self.app.driver
-        driver.find_element_by_id("signin_button").click()
+        driver.find_element_by_id(self.signin_button_id).click()
         driver.find_element_by_id("login_with_email").click()
         driver.find_element_by_id("email_edit").send_keys(username)
         driver.find_element_by_id("nextBtn").click()
@@ -33,9 +34,8 @@ class SessionHelper:
         time.sleep(3)
 
     def logout(self):
-        with allure.step('Logout step'):
-            driver = self.app.driver
-            pass
+        driver = self.app.driver
+        driver.find_element_by_xpath(self.signout_button_xpath).click()
 
     def forget_psw(self, username=''):
         with allure.step('Forget PSW'):
