@@ -1,7 +1,6 @@
 from time import sleep
 
 
-
 def test_add_item(app):
     driver = app.driver
     app.session.login_email()
@@ -26,7 +25,6 @@ def test_add_item(app):
     assert found_course == True, "Course is not on the Wishlist: %s" % course_name
 
 
-
 def test_delete_first_item(app):
     driver = app.driver
     app.session.login_email()
@@ -40,7 +38,3 @@ def test_delete_first_item(app):
     app.main.go_back()
     found_course = app.main.item_in_list(course_name)
     assert found_course == False, "Course is on the Wishlist: %s" % course_name
-
-
-
-

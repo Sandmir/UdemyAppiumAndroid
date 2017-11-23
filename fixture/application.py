@@ -23,8 +23,6 @@ class Application:
         self.main  = MainFunc(self)
 
 
-
-
     def destroy(self):
         # self.driver.quit()
         pass

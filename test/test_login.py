@@ -1,7 +1,3 @@
-from time import sleep
-
-import pytest
-
 
 def test_login_valid_credentials(app):
     app.session.login_email()
