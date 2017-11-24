@@ -21,7 +21,7 @@ class Application:
         self.driver.implicitly_wait(10)
         self.session = SessionHelper(self)
         self.main  = MainFunc(self)
-
+        # self.driver.find_element_by_id().a
 
     def destroy(self):
         # self.driver.quit()

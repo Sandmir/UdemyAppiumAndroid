@@ -1,5 +1,6 @@
 from time import sleep
-from appium.webdriver.common.touch_action import TouchAction
+
+from library.lib_appium import scroll_down
 
 
 class MainFunc:
@@ -22,11 +23,10 @@ class MainFunc:
 
     def __init__(self, app):
         self.app = app
-        self.action = TouchAction(self.app.driver)
+
 
     def item_in_list(self, course_name):
         driver = self.app.driver
-        action = TouchAction(driver)
         current_page = driver.page_source
         previous_page = ""
         found_course = False
@@ -38,7 +38,7 @@ class MainFunc:
                     break
             if found_course: break
             sleep(2)
-            action.press(x=500, y=400).move_to(x=500, y=-50).release().perform()
+            scroll_down(driver)
             previous_page = current_page
             current_page = driver.page_source
         return found_course
@@ -52,11 +52,6 @@ class MainFunc:
     def go_back(self):
         self.app.driver.find_element_by_accessibility_id(self.navigate_up_cont).click()
 
-    def scroll_up(self):
-        self.action.press(x=500, y=500).move_to(x=500, y=130).release().perform()
-
-    def scroll_down(self):
-        self.action.press(x=500, y=500).move_to(x=500, y=-30).release().perform()
 
     def get_course_name(self):
         return self.app.driver.find_element_by_id(self.item_name_id).text
